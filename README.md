@@ -4,7 +4,7 @@
 
 I'm interested in how mathematics translates into working software: numerical methods, statistics, and tools that turn abstract models into something you can run. I'm looking for opportunities in quantitative analysis where I can apply what I've learned to real problems.
 
-[📄 Download CV](cv_ian_bowen.pdf) · [✉️ Email](mailto:ianfbowen21@gmail.com) · [LinkedIn](https://www.linkedin.com/in/ian-francis-bowen-martín) · [GitHub](https://github.com/ianfbowen21)
+[🗎 Download CV](cv_ian_bowen.pdf) · [✉ Email](mailto:ianfbowen21@gmail.com) · [LinkedIn](https://www.linkedin.com/in/ian-francis-bowen-martín) · [GitHub](https://github.com/ianfbowen21)
 
 ---
 
