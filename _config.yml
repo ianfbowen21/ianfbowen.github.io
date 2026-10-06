@@ -12,7 +12,7 @@ github_username: ianfbowen21
 
 # The Minimal theme shows these in the sidebar
 show_downloads: false
-# logo: /assets/final.png   # uncomment after adding your photo to an /assets folder
+logo: /assets/final.png   # uncomment after adding your photo to an /assets folder
 
 # Only needed if the site is NOT at <username>.github.io (project site)
 # baseurl: "/repo-name"
