@@ -4,7 +4,7 @@
 
 I'm interested in how mathematics translates into working software: numerical methods, statistics, and tools that turn abstract models into something you can run. I'm looking for opportunities in quantitative analysis where I can apply what I've learned to real problems.
 
-[📄 Download CV](cv_ian_bowen.pdf) · [✉️ Email](mailto:ianfbowen21@gmail.com) · [LinkedIn](https://www.linkedin.com/in/ian-francis-bowen-martín) · [GitHub](https://github.com/YOUR-USERNAME)
+[📄 Download CV](cv_ian_bowen.pdf) · [✉️ Email](mailto:ianfbowen21@gmail.com) · [LinkedIn](https://www.linkedin.com/in/ian-francis-bowen-martín) · [GitHub](https://github.com/ianfbowen21)
 
 ---
 
@@ -54,13 +54,12 @@ I'm interested in how mathematics translates into working software: numerical me
 
 ## Skills
 
-**Languages:** English, French, Spanish, Catalan
-**Programming:** Python (NumPy, Matplotlib, Pandas), C++, MATLAB, R, Sage
+**Languages:** English, French, Spanish, Catalan\n
+**Programming:** Python (NumPy, Matplotlib, Pandas), C++, MATLAB, R, Sage\n
 **Tools:** LaTeX, GitHub, Linux
 
 ---
 
-## Contact
 
 Facultat de Matemàtiques i Estadística, UPC · Barcelona, Spain
 📧 [ianfbowen21@gmail.com](mailto:ianfbowen21@gmail.com)
