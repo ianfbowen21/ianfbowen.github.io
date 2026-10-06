@@ -18,7 +18,6 @@ I'm interested in how mathematics translates into working software: numerical me
 - **Problem:** What were you trying to solve or model?
 - **Approach:** Methods and tools used (e.g. Monte Carlo simulation, Python, NumPy).
 - **Result:** What did you find? Add a plot or key number.
-- **Links:** [Code](https://github.com/YOUR-USERNAME/project-one) · [Live demo](#)
 
 ### 🧮 Project name two
 *One-line summary.*
@@ -26,7 +25,6 @@ I'm interested in how mathematics translates into working software: numerical me
 - **Problem:**
 - **Approach:**
 - **Result:**
-- **Links:** [Code](https://github.com/YOUR-USERNAME/project-two)
 
 ### 🤖 Project name three
 *One-line summary.*
@@ -54,12 +52,13 @@ I'm interested in how mathematics translates into working software: numerical me
 
 ## Skills
 
-**Languages:** English, French, Spanish, Catalan\n
-**Programming:** Python (NumPy, Matplotlib, Pandas), C++, MATLAB, R, Sage\n
+**Languages:** English, French, Spanish, Catalan  
+**Programming:** Python (NumPy, Matplotlib, Pandas), C++, MATLAB, R, Sage  
 **Tools:** LaTeX, GitHub, Linux
 
 ---
 
+## Contact
 
-Facultat de Matemàtiques i Estadística, UPC · Barcelona, Spain
+Facultat de Matemàtiques i Estadística, UPC · Barcelona, Spain  
 📧 [ianfbowen21@gmail.com](mailto:ianfbowen21@gmail.com)
