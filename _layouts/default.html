@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+  <aside class="sidebar">
+    {% if site.logo %}
+      <img class="avatar" src="{{ site.logo | relative_url }}" alt="{{ site.title }}">
+    {% endif %}
+    <h1 class="name">{{ site.title }}</h1>
+    <p class="tagline">Mathematics · Quantitative Analysis</p>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="cv-button" href="{{ '/cv_ian_bowen.pdf' | relative_url }}">Download CV</a>
+  </aside>
+
+  <main class="content">
+    <span id="about"></span>
+    {{ content }}
+  </main>
+
+  <script>
+    // Highlight the sidebar link of the section currently in view
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.sidebar nav a'));
+      var targets = links.map(function (a) { return document.getElementById(a.hash.slice(1)); });
+
+      function update() {
+        var current = 0;
+        targets.forEach(function (el, i) {
+          if (el && el.getBoundingClientRect().top <= 160) current = i;
+        });
+        // At the very bottom of the page, highlight the last link
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+          current = links.length - 1;
+        }
+        links.forEach(function (a, i) { a.classList.toggle('active', i === current); });
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+</body>
+</html>
