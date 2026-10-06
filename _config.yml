@@ -1,3 +1,29 @@
+# Jekyll configuration for GitHub Pages
+# Repo must be named <your-username>.github.io (or set "baseurl" for a project site)
+
 theme: jekyll-theme-minimal
-title: Ian Bowen's homepage
-description: This is a website to keep my projects 
+
+title: Ian Francis Bowen Martín
+description: Mathematics student at UPC · Quantitative Analysis · Numerical methods and software
+lang: en
+
+# Replace with your real GitHub username
+github_username: YOUR-USERNAME
+
+# The Minimal theme shows these in the sidebar
+show_downloads: false
+# logo: /assets/final.png   # uncomment after adding your photo to an /assets folder
+
+# Only needed if the site is NOT at <username>.github.io (project site)
+# baseurl: "/repo-name"
+# url: "https://YOUR-USERNAME.github.io"
+
+plugins:
+  - jekyll-seo-tag
+
+# Keep source files out of the published site
+exclude:
+  - "*.tex"
+  - "references/"
+  - Gemfile
+  - Gemfile.lock
