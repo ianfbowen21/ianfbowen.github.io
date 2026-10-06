@@ -1,0 +1,23 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+@media screen and (min-width: 961px) {
+  .wrapper {
+    width: auto;
+    margin: 0;
+  }
+
+  header {
+    padding-left: 30px;   /* set to 0 for truly edge-to-edge */
+  }
+
+  section {
+    float: none;
+    width: auto;
+    max-width: 800px;
+    margin-left: 330px;   /* sidebar width (270px) plus breathing room */
+    padding-right: 30px;
+  }
+}
