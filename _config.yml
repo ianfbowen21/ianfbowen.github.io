@@ -1,22 +1,22 @@
 # Jekyll configuration for GitHub Pages
-# Repo must be named <your-username>.github.io (or set "baseurl" for a project site)
-
-theme: jekyll-theme-minimal
+# Custom layout in _layouts/default.html and styles in assets/css/style.scss
+# (no remote theme needed)
 
 title: Ian Francis Bowen Martín
 description: Mathematics student at UPC · Quantitative Analysis · Numerical methods and software
 lang: en
 
-# Replace with your real GitHub username
 github_username: ianfbowen21
 
-# The Minimal theme shows these in the sidebar
-show_downloads: false
-logo: /assets/final.png   # uncomment after adding your photo to an /assets folder
+# Sidebar photo (remove this line to hide it)
+logo: /assets/final.png
 
-# Only needed if the site is NOT at <username>.github.io (project site)
-# baseurl: "/repo-name"
-# url: "https://YOUR-USERNAME.github.io"
+# Apply the custom layout to every page
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
 
 plugins:
   - jekyll-seo-tag
