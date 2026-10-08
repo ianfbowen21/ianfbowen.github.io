@@ -92,23 +92,9 @@ a { color: inherit; }
   text-decoration: underline;
 }
 
-.download {
-  display: inline-block;
-  margin-top: 32px;
-  padding: 10px 18px;
-  border: 2px solid #fff;
-  border-radius: 6px;
-  color: var(--main-blue);
-  background: #fff;
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-}
-
-.download:hover,
-.download:focus-visible {
-  background: transparent;
-  color: #fff;
+/* The download link sits in the nav list; this makes its text fully white */
+.sidebar nav a.download {
+  opacity: 1;
 }
 
 /* ---------- Main content ---------- */
