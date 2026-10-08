@@ -208,9 +208,19 @@ dd { margin: 0; }
     padding: 24px 20px 60px;
   }
 
+  /* Phones: title first, then the photo, then the text */
+  #description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #description h2 { order: -1; }       /* moves the title above the photo */
+
   .photo {
-    width: 50%;            /* half the width of the page content on phones */
-    margin-left: 16px;
+    float: none;
+    flex-shrink: 0;
+    width: 50%;            /* half the width of the page content; use 100% for full width */
+    margin: 0 0 16px 0;
   }
   .entry, dl { grid-template-columns: 80px 1fr; }
 }
