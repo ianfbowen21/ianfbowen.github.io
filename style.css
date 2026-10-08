@@ -78,86 +78,6 @@ a { color: inherit; }
 }
 
 .sidebar nav a {
-  padding: 6px 0;/* ---------- Colors: change these to restyle the whole page ---------- */
-:root {
-  --main-blue: #26629f;   /* sidebar background */
-  --text: #4a4a4a;
-  --muted: #8a8a8a;
-  --bg: #ffffff;
-  --green: #118a11;
-  --blue: #1a62c0;
-  --teal: #0f8f94;
-  --sidebar-width: 280px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #d4d4d4;
-    --muted: #8f8f8f;
-    --bg: #17191c;
-    --main-blue: #1c4a7a;
-    --green: #4cc24c;
-    --blue: #5b9cf0;
-    --teal: #3cc3c8;
-  }
-}
-
-/* ---------- Base ---------- */
-* { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text);
-  background: var(--bg);
-}
-
-a { color: inherit; }
-
-/* ---------- Sidebar ---------- */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--sidebar-width);
-  height: 100%;
-  padding: 40px 28px;
-  background: var(--main-blue);
-  color: #fff;
-  text-align: right;
-}
-
-.sidebar h1 {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 300;
-  line-height: 1.15;
-}
-
-.sidebar h1 strong {
-  display: block;
-  font-weight: 700;
-}
-
-.tagline {
-  margin: 12px 0 40px;
-  font-size: 0.85rem;
-  opacity: 0.8;
-}
-
-.sidebar nav {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.sidebar nav a {
   padding: 6px 0;
   color: #fff;
   font-size: 1.1rem;
@@ -201,21 +121,21 @@ h2 {
 .blue  { color: var(--blue); }
 .teal  { color: var(--teal); }
 
-/* Photo floated to the right, starting level with the "description" title.
-   The text (title included) wraps around it. The photo is wide rather than
-   tall (4:3) so that on big screens it is not taller than the text.
-   It shrinks on smaller windows, where the text gets longer, so the text
-   stays as long as the photo or longer. */
+/* Photo floated to the right. In the HTML the photo comes AFTER the title,
+   so on phones it sits under the title. On desktop the negative top margin
+   (the height of the title) pulls it up so it starts level with the title.
+   The text wraps around it in both cases. */
 #description {
-  display: flow-root;                  /* keeps the float inside this section */
+  --title-space: calc(1.9rem * 1.6 + 16px);   /* title line height + its bottom margin */
+  display: flow-root;                         /* keeps the float inside this section */
 }
 
 .photo {
   float: right;                        /* "left" puts it on the left; swap the margin too */
   width: min(393px, 35%);              /* max size, or 35% of the content width if smaller */
-  aspect-ratio: 1 / 1;                 /* try 1 / 1 for square, or 3 / 4 for tall (needs more text) */
+  aspect-ratio: 1 / 1;                 /* 4 / 3 is wider and shorter, 3 / 4 is taller */
   height: auto;
-  margin: 0 0 12px 28px;
+  margin: calc(-1 * var(--title-space)) 0 12px 28px;
   object-fit: cover;                   /* crops instead of stretching */
   object-position: center top;         /* keeps the face when cropping */
 }
@@ -288,168 +208,10 @@ dd { margin: 0; }
     padding: 24px 20px 60px;
   }
 
-  /* Phones: title first, then the photo, then the text */
-  #description {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #description h2 { order: -1; }       /* moves the title above the photo */
-
+  /* Phones: photo starts under the title, text wraps beside it */
   .photo {
-    float: none;
-    flex-shrink: 0;
-    width: 50%;            /* half the width of the page content; use 100% for full width */
-    margin: 0 0 16px 0;
-  }
-  .entry, dl { grid-template-columns: 80px 1fr; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-decoration: none;
-  opacity: 0.75;
-}
-
-.sidebar nav a:hover,
-.sidebar nav a:focus-visible {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-/* The download link sits in the nav list; this makes its text fully white */
-.sidebar nav a.download {
-  opacity: 1;
-}
-
-/* ---------- Main content ---------- */
-main {
-  margin-left: var(--sidebar-width);
-  max-width: 1100px;      /* lower this if text lines get too long on big screens */
-  padding: 40px 48px 80px;
-}
-
-section {
-  padding-top: 24px;
-  margin-bottom: 40px;
-  scroll-margin-top: 16px; /* keeps heading visible after a jump */
-}
-
-h2 {
-  margin: 0 0 16px;
-  font-size: 1.9rem;
-  font-weight: 700;
-}
-
-/* first letters of each heading use an accent color */
-.green { color: var(--green); }
-.blue  { color: var(--blue); }
-.teal  { color: var(--teal); }
-
-/* Photo floated to the right, starting level with the "description" title.
-   The text (title included) wraps around it. The photo is wide rather than
-   tall (4:3) so that on big screens it is not taller than the text.
-   It shrinks on smaller windows, where the text gets longer, so the text
-   stays as long as the photo or longer. */
-#description {
-  display: flow-root;                  /* keeps the float inside this section */
-}
-
-.photo {
-  float: right;                        /* "left" puts it on the left; swap the margin too */
-  width: max(min(320px, 35%),393);              /* max size, or 35% of the content width if smaller */
-  aspect-ratio: 1 / 1;                 /* try 1 / 1 for square, or 3 / 4 for tall (needs more text) */
-  height: auto;
-  margin: 0 0 12px 28px;
-  object-fit: cover;                   /* crops instead of stretching */
-  object-position: center top;         /* keeps the face when cropping */
-}
-
-p { margin: 0 0 12px; }
-
-/* ---------- Experience / education / projects entries ---------- */
-.entry {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 16px;
-  margin-bottom: 22px;
-}
-
-.date {
-  font-size: 0.9rem;
-  color: var(--text);
-}
-
-.info h3 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.place {
-  margin: 0;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.desc {
-  margin: 4px 0 0;
-  font-style: italic;
-}
-
-/* ---------- Skills / contact lists ---------- */
-dl {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 8px 16px;
-  margin: 0;
-}
-
-dt { font-weight: 700; }
-dd { margin: 0; }
-
-/* ---------- Mobile: sidebar becomes a top bar ---------- */
-@media (max-width: 800px) {
-  .sidebar {
-    position: static;
-    width: 100%;
-    height: auto;
-    padding: 28px 20px 16px;
-    text-align: left;
-  }
-
-  .sidebar h1 strong { display: inline; }
-  .tagline { margin-bottom: 16px; }
-
-  .sidebar nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 4px 16px;
-  }
-
-  .sidebar nav a { font-size: 1rem; }
-
-  main {
-    margin-left: 0;
-    padding: 24px 20px 60px;
-  }
-
-  /* Phones: title first, then the photo, then the text */
-  #description {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #description h2 { order: -1; }       /* moves the title above the photo */
-
-  .photo {
-    float: none;
-    flex-shrink: 0;
-    width: 50%;            /* half the width of the page content; use 100% for full width */
-    margin: 0 0 16px 0;
+    width: 50%;            /* half the width of the page content */
+    margin: 0 0 12px 16px; /* no negative top margin, so it stays under the title */
   }
   .entry, dl { grid-template-columns: 80px 1fr; }
 }
