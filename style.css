@@ -133,7 +133,7 @@ h2 {
 .photo {
   float: right;                        /* "left" puts it on the left; swap the margin too */
   width: min(340px, 35%);              /* max size, or 35% of the content width if smaller */
-  aspect-ratio: 4 / 3;                 /* try 1 / 1 for square, or 3 / 4 for tall (needs more text) */
+  aspect-ratio: 1 / 1;                 /* try 1 / 1 for square, or 3 / 4 for tall (needs more text) */
   height: auto;
   margin: 0 0 12px 28px;
   object-fit: cover;                   /* crops instead of stretching */
