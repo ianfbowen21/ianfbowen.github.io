@@ -94,13 +94,14 @@ a { color: inherit; }
 
 .download {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 32px;
   padding: 10px 18px;
   border: 2px solid #fff;
+  border-radius: 6px;
   color: var(--main-blue);
   background: #fff;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   text-decoration: none;
 }
 
@@ -134,15 +135,23 @@ h2 {
 .blue  { color: var(--blue); }
 .teal  { color: var(--teal); }
 
-/* flow-root makes the section contain the floated photo,
-   so the text wraps around it and nothing below gets pushed aside */
-#description { display: flow-root; }
+/* Square photo floated to the side: text wraps around it when the text is
+   taller than the photo. The size is kept small enough that the photo is
+   not taller than the text, even on wide screens where the text is shortest.
+   Make it bigger with --photo-size, but on very wide screens it may then
+   end up taller than the paragraphs. */
+#description {
+  --photo-size: 170px;
+  display: flow-root;                  /* keeps the float inside this section */
+}
 
 .photo {
-  float: right;        /* change to "left" (and swap the margin) to put it on the left */
-  width: 180px;
-  height: auto;
+  float: right;                        /* "left" puts it on the left; swap the margin too */
+  width: var(--photo-size);
+  height: var(--photo-size);
   margin: 4px 0 12px 28px;
+  object-fit: cover;                   /* crops instead of stretching */
+  object-position: center top;         /* keeps the face when cropping */
 }
 
 p { margin: 0 0 12px; }
@@ -213,7 +222,8 @@ dd { margin: 0; }
     padding: 24px 20px 60px;
   }
 
-  .photo { width: 110px; }
+  #description { --photo-size: 110px; }
+  .photo { margin-left: 16px; }
   .entry, dl { grid-template-columns: 80px 1fr; }
 }
 
