@@ -92,19 +92,26 @@ a { color: inherit; }
   text-decoration: underline;
 }
 
+.download {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 10px 18px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  color: var(--main-blue);
+  background: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.download:hover,
+.download:focus-visible {
+  background: transparent;
+  color: #fff;
+}
+
 /* ---------- Main content ---------- */
-.description-body {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem; /* Space between image and text */
-}
-
-.photo {
-  width: 180px; /* Adjust size as needed */
-  height: auto;
-  flex-shrink: 0; /* Prevents image from shrinking */
-}
-
 main {
   margin-left: var(--sidebar-width);
   max-width: 1100px;      /* lower this if text lines get too long on big screens */
@@ -128,11 +135,15 @@ h2 {
 .blue  { color: var(--blue); }
 .teal  { color: var(--teal); }
 
+/* flow-root makes the section contain the floated photo,
+   so the text wraps around it and nothing below gets pushed aside */
+#description { display: flow-root; }
+
 .photo {
-  float: right;
-  width: 150px;
-  margin: 0 0 12px 24px;
-  border: 0;
+  float: right;        /* change to "left" (and swap the margin) to put it on the left */
+  width: 180px;
+  height: auto;
+  margin: 4px 0 12px 28px;
 }
 
 p { margin: 0 0 12px; }
