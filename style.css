@@ -94,14 +94,13 @@ a { color: inherit; }
 
 .download {
   display: inline-block;
-  margin-top: 32px;
+  margin-top: 20px;
   padding: 10px 18px;
   border: 2px solid #fff;
-  border-radius: 6px;
   color: var(--main-blue);
   background: #fff;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   text-decoration: none;
 }
 
